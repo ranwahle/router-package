@@ -1,6 +1,7 @@
 # Vanilla JS Routing package
 
-This package is an angular-like routing package, only insetead of Angular components, it renders a vanilla JS custome elements.
+This package is an angular-like routing package, only instead of Angular components, 
+it renders a vanilla JS custom elements.
 
 ## Use this package
 
