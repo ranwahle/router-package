@@ -37,6 +37,12 @@ export default class RoutingSnapshotTreeBuilder {
         return url === '/' ? [''] : url.split('/');
     }
 
+    /**
+     * Determine whether a route is suitable
+     * @param {import("./route").Route} route
+     * @param {string[]} urlFragments
+     * @returns {boolean}
+     */
     isRouteSuitable(route, urlFragments) {
         const routeURLFragments = this.getFragments(route.path);
         let result = routeURLFragments.length === urlFragments.length;
@@ -47,8 +53,14 @@ export default class RoutingSnapshotTreeBuilder {
         return result;
     }
 
+    /**
+     *
+     * @param {string[]} urlFragments
+     * @param {any[]} routes
+     * @returns {null}
+     */
     buildRoutesTreeFromFragments(urlFragments, routes) {
-        if (!routes.filter) {
+        if (!Array.isArray(routes)) {
             throw new Error('Routes should be an array');
         }
         const candidates = routes.filter(route => this.isRouteSuitable(route, urlFragments));

@@ -30,7 +30,7 @@ export default class GalleryToolbar extends HTMLDivElement {
 
     render() {
         this.innerHTML = `<div class="toolbar">
-          <a title="Add image" functional-id="add-image" is="self-routing-anchor" href="/addImage"> <i class="fas fa-plus"></i> </a>
+          <a title="Add image" is="self-routing-anchor" href="/addImage"> <i class="fas fa-plus"></i> </a>
           
     </div>`
 

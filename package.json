@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "prettier": "prettier --check --write \"**/*.js\""
+    "prettier": "prettier --check --write \"**/*.js\"",
+    "start": "lerna run --parallel start"
   },
   "husky": {
     "pre-commit": "npm run pretier"

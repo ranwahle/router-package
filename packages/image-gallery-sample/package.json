@@ -15,6 +15,6 @@
     "express": "^4.17.1",
     "morgan": "^1.9.1",
     "multiparty": "^4.2.1",
-    "@vanillarrouter/router-module": "1.0.0"
+    "@vanillarouter/router-module": "1.0.0"
   }
 }
