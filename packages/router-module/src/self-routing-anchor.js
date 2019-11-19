@@ -15,8 +15,8 @@ export default class SelfRoutingAnchor extends HTMLAnchorElement {
     }
 
     connectedCallback() {
-        const router = Router.router
         this.onclick = evt => {
+            const {router} = Router;
             evt.preventDefault()
             router.navigate(this.href)
         }
