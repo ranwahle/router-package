@@ -1,4 +1,4 @@
-#Vanilla JS Routing package
+# Vanilla JS Routing package
 
 This package is an angular-like routing package, only insetead of Angular components, it renders a vanilla JS custome elements.
 
