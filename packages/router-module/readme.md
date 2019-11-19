@@ -39,7 +39,14 @@ Router.appRouter(routes);
 ```html
 <a title="Add image" is="self-routing-anchor" href="/addImage">Your text or content</a>
 ```
+### Router outlet
+This is where the element are rendered according to the route
+You may use routes-animation-duration to animate route transitions
+It accepts number for duration in milliseconds.
 
+```html
+<router-outlet routes-animation-duration="500"  ></router-outlet>
+```
 ### Pragmatically navigate
 
 ```javascript
