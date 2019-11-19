@@ -45,4 +45,9 @@ Router.appRouter(routes);
 ```javascript
 Router.router.navigate('url')
 ```
-
+### Use route url-parameters
+```javascript
+///  path: 'image/:index'
+const {currentSnapshot}= Router.router;
+const {index} = currentSnapshot.params;
+```

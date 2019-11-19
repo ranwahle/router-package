@@ -181,7 +181,8 @@ export default class DetailedImage extends HTMLDivElement {
     }
 
     render() {
-        const parameters = Router.router.currentSnapshot.params;
+        const {currentSnapshot}= Router.router;
+        const {index} = currentSnapshot.params;
         this.style.display = 'flex';
         this.innerHTML = `
         <div class="detailed-image-container">
