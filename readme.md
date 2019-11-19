@@ -45,7 +45,7 @@ You may use routes-animation-duration to animate route transitions
 It accepts number for duration in milliseconds.
 
 ```html
-<router-outlet routes-animation-duration="500"  ></router-outlet>
+<router-outlet routes-animation-duration="500"></router-outlet>
 ```
 ### Pragmatically navigate
 
