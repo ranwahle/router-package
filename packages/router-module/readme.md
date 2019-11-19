@@ -47,7 +47,7 @@ It accepts number for duration in milliseconds.
 ```html
 <router-outlet routes-animation-duration="500"></router-outlet>
 ```
-### Pragmatically navigate
+### Progmatically navigate
 
 ```javascript
 Router.router.navigate('url')
