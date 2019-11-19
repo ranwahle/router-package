@@ -2,9 +2,6 @@ import RoutingSnapshotTreeBuilder from './routing-snapshot-tree-builder.js';
 
 export class Router {
 
-    // routingSnapshotTreeBuilder;
-    // currentSnapshot;
-
     static router;
     static appRouter(routes) {
         Router.router = new Router(routes);
