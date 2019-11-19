@@ -1,14 +1,15 @@
 {
   "name": "@vanillarouter/router-module",
-  "version": "1.0.0",
+  "version": "0.1.0-beta-2",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "build" : "npx tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pack": "npm run build && npm pack",
+    "publish": "npm run build && npm publish --access public --teraball ./vanillarouter-router-module-0.1.0-beta-2.tgz"
   },
-  "keywords": [],
+  "keywords": ["vanillajs", "router"],
   "author": "Ran Wahle",
   "license": "ISC",
   "devDependencies": {

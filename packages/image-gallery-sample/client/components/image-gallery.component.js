@@ -131,7 +131,7 @@ import {Router} from '../routingModule/'
            </h1></div>
             <div is="gallery-toolbar"></div>
             </div>
-            <router-outlet></router-outlet>
+            <router-outlet routes-animation-duration="500"></router-outlet>
             <div class="gallery-container">
             
             <!--<div is="detailed-image" class="hidden"></div>-->

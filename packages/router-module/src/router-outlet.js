@@ -6,9 +6,12 @@ import { Router } from "./router.js"
  */
 export default class RouterOutlet extends HTMLElement {
 
-    constructor() {
-        super()
-        this.animationDuration = 500
+    get animationDuration() {
+        const durationValue = this.getAttribute('routes-animation-duration');
+        if (!durationValue || isNaN(+durationValue)) {
+            return 0;
+        }
+        return +durationValue;
     }
 
     static get observedAttributes() {
@@ -34,11 +37,19 @@ export default class RouterOutlet extends HTMLElement {
         }
         const child = this.firstChild;
         // @ts-ignore
-        child.animate({opacity: [1, 0]}, {duration: this.animationDuration - 500, easing: 'ease'})
-        setTimeout(() => {
+
+        const clear = () => {
             this.removeChild(this.firstChild)
             this.clearChildren()
-        }, this.animationDuration)
+        }
+
+        if (!this.animationDuration) {
+            clear();
+            return;
+        }
+        // @ts-ignore
+        child.animate({opacity: [1, 0]}, {duration: this.animationDuration - 500, easing: 'ease'})
+        setTimeout(clear, this.animationDuration)
 
 
     }
@@ -78,11 +89,19 @@ export default class RouterOutlet extends HTMLElement {
         Object.keys(newRouteData.attributes || {}).forEach(key => {
             newElement.setAttribute(key, newRouteData.attributes[key])
         })
+
+        if (!this.animationDuration) {
+            this.appendChild(newElement);
+            return;
+        }
+
+        // Else animate
         newElement.style.opacity = 0
 
         setTimeout(() => {
+
                 this.appendChild(newElement)
-                newElement.animate({opacity: [0, 1]}, {duration: 2000, easing: 'ease'})
+                newElement.animate({opacity: [0, 1]}, {duration: this.animationDuration, easing: 'ease'})
                 newElement.style.opacity = 1
             }
             , this.animationDuration)

@@ -23,7 +23,7 @@ app.use('/routingModule', (req, res) => {
         originalPath = 'index.js';
     }
     console.log('req.url', originalPath)
-    const file = path.join(__dirname, `node_modules/@vanillarrouter/router-module/src/${originalPath}`);
+    const file = path.join(__dirname, `node_modules/@vanillarrouter/router-module/dist/${originalPath}`);
     fs.exists(file, exists => {
         if (!exists) {
             res.status(404).send('Not found')
