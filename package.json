@@ -1,0 +1,15 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "prettier": "prettier --check --write \"**/*.js\""
+  },
+  "husky": {
+    "pre-commit": "npm run pretier"
+  },
+  "devDependencies": {
+    "lerna": "^3.18.3",
+    "husky": "^3.0.9",
+    "prettier": "^1.19.1"
+  }
+}

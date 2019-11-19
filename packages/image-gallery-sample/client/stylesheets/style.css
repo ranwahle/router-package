@@ -1,0 +1,141 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+div.gallery-container {
+  display: flex;
+}
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  transition: height 500ms linear;
+}
+
+.status-div {
+  color: red;
+  font-weight: bold;
+}
+
+
+.small-image-container {
+
+  width: 15em;
+  height: 15em;
+  display:block;
+   opacity: 1;
+  cursor: pointer;
+  transition: transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s;
+}
+
+.small-image-container img {
+
+  max-width: 15em;
+  max-height: 15em;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+div[is="small-image"] {
+  margin: 2px;
+}
+
+.side-show {
+  width: 50%;
+}
+
+i {
+  font-size: 24px;
+}
+
+.disabled {
+  color: lightgray;
+  transition: color 1s linear;
+}
+
+.shadow-div {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+  position: absolute;
+}
+
+.popup-container {
+  z-index: 1000;
+  position: absolute;
+  display: flex;
+}
+
+div[is="detailed-image"] {
+  position: absolute;
+  opacity: 1;
+  z-index: 1000;
+}
+
+div.image-title {
+  background-color: black;
+  opacity: 0.4;
+  color: white;
+}
+
+.image-description {
+  margin-bottom: 10px;
+}
+
+.field-label {
+  font-weight: bold;
+}
+
+.blurry {
+  opacity: 0.9;
+}
+
+.arrows-button {
+
+  display: flex;
+  }
+
+.arrows-button a i {
+  font-size: 72px;
+}
+
+div[is="add-image"]  div div {
+  border-bottom: solid 1px;
+  margin-bottom: 10px;
+}
+div[is="add-image"]  div input,
+div[is="add-image"]  div textarea {
+  font-size: 19px;
+  border-style: none;
+
+}
+
+
+div[is="add-image"] div.image-preview {
+  border-bottom-style: none;
+}
+
+.rename-section input {
+  font-size: 24px;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+  transition: height 500ms linear;
+}
+
+button {
+
+  background-color: transparent;
+  font-weight: bold;
+  border-radius: 5px;
+}
