@@ -1,16 +1,16 @@
 {
   "name": "@vanillarouter/router-module",
-  "version": "0.1.0-beta.6",
-  "description": "",
+  "version": "0.1.0-beta.7",
+  "description": "Vanilla JS routing package",
   "repository": {
     "url": "https://github.com/ranwahle/router-package"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "build" : "npx tsc",
     "pack": "npm run build && npm pack",
-    "publish": "npm run pack && npm publish --access public --teraball ./vanillarouter-router-module-0.1.0-beta.6.tgz"
+    "publish": "npm run pack && npm publish --access public --teraball ./vanillarouter-router-module-0.1.0-beta.7.tgz"
   },
   "keywords": ["vanillajs", "router"],
   "author": "Ran Wahle",
