@@ -1,10 +1,36 @@
 import RoutingSnapshotTreeBuilder from './routing-snapshot-tree-builder.js';
 
+
+const routerCreatedCallback = [];
+
 export class Router {
 
-    static router;
+    static _router;
+
+    static get router() {
+        return Router._router;
+    }
+
+    /**
+     * Gets the router instance
+     * @returns {Promise<Router> | Router }
+     */
+    static getRouter() {
+        if (Router.router) {
+            return Router.router;
+        }
+        return new Promise(resolve => {
+            routerCreatedCallback.push(() => {
+                resolve(Router.router);
+            } )
+        })
+    }
+
+
+
     static appRouter(routes) {
-        Router.router = new Router(routes);
+        Router._router = new Router(routes);
+        routerCreatedCallback.forEach(cb => cb());
         return Router.router;
     }
 
@@ -23,8 +49,8 @@ export class Router {
     /**
      * This function detemrmine whether the user can go on to the route, according to the guard finction
      * @param routeData
-     * @param guard
-     * @param oldGuard
+     * @param {(any) => Promise<boolean> | boolean} guard
+     * @param {(any) => Promise<boolean> | boolean = }oldGuard
      * @returns {Promise<boolean>}
      */
     async canGoOn(routeData, guard, oldGuard) {

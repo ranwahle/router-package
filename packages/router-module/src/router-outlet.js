@@ -62,8 +62,9 @@ export default class RouterOutlet extends HTMLElement {
      */
     async changeRoute(newRoute) {
 
-        const treeBuilder = Router.router.routingSnapshotTreeBuilder
-        const router = Router.router
+        const router = await Router.getRouter();
+
+        const treeBuilder = router.routingSnapshotTreeBuilder
         const newRouteData = treeBuilder.buildRouteTree(newRoute)
 
         if (!newRouteData) {
