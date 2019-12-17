@@ -84,14 +84,10 @@ export default class RoutingSnapshotTreeBuilder {
         })
         return result;
     }
+
     buildRouteObject(routeCandidate, urlFragments) {
         const result = {...routeCandidate};
         result.params = this.buildParameters(routeCandidate, urlFragments);
-        // if (routeCandidate.path.startsWith(':')) {
-        //     const paramName = routeCandidate.path.substring(1);
-        //     result.params = {};
-        //     result.params[paramName] = urlFragments[0];
-        // }
         const lastIndex = urlFragments.length - 1;
         if (urlFragments[lastIndex] === '') {
             urlFragments.splice(0, lastIndex);
